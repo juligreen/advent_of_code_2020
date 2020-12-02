@@ -19,3 +19,12 @@ for passwordelement in passwordelements:
         validpasswordcount = validpasswordcount + 1
 
 print(validpasswordcount)
+
+validpasswordcount = 0
+for passwordelement in passwordelements:
+        if passwordelement['countmin'] > len(passwordelement["password"]):
+            continue
+        if bool(passwordelement['password'][passwordelement['countmin']-1] == passwordelement['letter']) ^ bool(passwordelement['password'][passwordelement['countmax']-1] == passwordelement['letter']):
+            validpasswordcount +=1
+
+print(validpasswordcount)
